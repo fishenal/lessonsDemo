@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="this is description">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>jquery demo page</title>
+        <script src="jquery.min.js"></script>
+    </head>
+    <body>
+        <button class="button">Click me!</button>
+        <p class="paragraph">The quick brown fox jumps over the lazy dog</p>
+        <script>
+          $(document).ready(function(){
+            $(".button").click(function() {
+              $(".paragraph").toggle();
+            });
+          });
+        </script>
+    </body>
+</html>
