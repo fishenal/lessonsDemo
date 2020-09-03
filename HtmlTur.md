@@ -16,18 +16,26 @@ very simple example:
 # head
 ## Meta
 Metadata is data that describes data
+```
 <meta charset="utf-8"> 指定文档编码
 <meta name="author" content="Chris Mills">
 <meta name="description" content="The MDN Web Docs Learning Area aims to provide
 complete beginners to the Web with all they need to know to get
 started with developing web sites and applications.">
+```
+
+## meta viewport
+```
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
 
 ## title
 
 ## link
 link style.css
+```
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
+```
 ## style
 文档内样式
 
@@ -111,6 +119,8 @@ link style.css
   - title
   - event handler: onload onclick oncontextmenu onerror ...
 
+## 三种引入style的方式
+
 ## img, video
  - https://homepages.cae.wisc.edu/~ece533/images/airplane.png
 
@@ -132,6 +142,7 @@ sidebar: <aside>; often placed inside <main>.
 footer: <footer>.
 
 ## SEO (Search Engine Optimization)
+meta信息
 
 ## Document Object Model (DOM)
 
