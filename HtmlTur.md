@@ -51,21 +51,78 @@ link style.css
 ## i, sub, sup, strong
 
 ## defaul css and reset css
+```css
+  /* http://meyerweb.com/eric/tools/css/reset/
+    v2.0 | 20110126
+    License: none (public domain)
+  */
+
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, center,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed,
+  figure, figcaption, footer, header, hgroup,
+  menu, nav, output, ruby, section, summary,
+  time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article, aside, details, figcaption, figure,
+  footer, header, hgroup, menu, nav, section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  ol, ul {
+    list-style: none;
+  }
+  blockquote, q {
+    quotes: none;
+  }
+  blockquote:before, blockquote:after,
+  q:before, q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+```
 ## div/HTML Content Division element  vs span
 
+## attributes
+ ### global attributes
+  - class
+  - id
+  - style
+  - title
+  - event handler: onload onclick oncontextmenu onerror ...
+
 ## img, video
-## canvas  canvas scripting API or the WebGL API 
+ - https://homepages.cae.wisc.edu/~ece533/images/airplane.png
 
-
+## canvas  canvas scripting API or the WebGL API
 
 ## iframe
 
 ## table - 表格
 
 ## 用户交互
-## form 
+## form
 ## input textarea button select
-
 
 ## 良好的html结构
 header: <header>.
@@ -74,10 +131,8 @@ main content: <main>, with various content subsections represented by <article>,
 sidebar: <aside>; often placed inside <main>.
 footer: <footer>.
 
-## SEO (Search Engine Optimization) 
+## SEO (Search Engine Optimization)
 
-## Document Object Model (DOM) 
-
-## HTML tree, DOM tree
+## Document Object Model (DOM)
 
 ## DOM examples
