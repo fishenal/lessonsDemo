@@ -12,6 +12,7 @@ very simple example:
   </body>
 </html>
 ```
+## html lang="en"
 
 # head
 ## Meta
@@ -121,19 +122,6 @@ link style.css
 
 ## 三种引入style的方式
 
-## img, video
- - https://homepages.cae.wisc.edu/~ece533/images/airplane.png
-
-## canvas  canvas scripting API or the WebGL API
-
-## iframe
-
-## table - 表格
-
-## 用户交互
-## form
-## input textarea button select
-
 ## 良好的html结构
 header: <header>.
 navigation bar: <nav>.
@@ -143,6 +131,80 @@ footer: <footer>.
 
 ## SEO (Search Engine Optimization)
 meta信息
+
+--
+
+## img, video
+ - https://homepages.cae.wisc.edu/~ece533/images/airplane.png
+
+## canvas  canvas scripting API or the WebGL API
+ - https://threejs.org/examples/#webgl_animation_cloth
+
+## iframe
+
+## table - 表格
+
+ - basic
+ - tr, th, td
+ - border css
+ - colgroup
+ - td 内部html
+
+## 用户交互
+## form
+ - basic
+ - label input
+ - submit
+  - input type submit
+  - button type submit
+ - action, method
+ - input type
+  - text
+  - password
+  - submit
+  - button
+  - checkbox
+  - radio
+  - image
+  - hidden
+  - file
+  html5
+  - color
+  - date
+  - range
+  - number
+ - input attributes
+  - name
+  - type
+  - value
+  - disabled
+  - required
+  - autocomplete
+  - placeholder
+  - checked
+
+ - textarea
+  resize
+  ```
+  textarea {
+    resize: none;
+  }
+  ```
+  - attributes
+    - rows
+    - cols
+    - name
+    - minlength
+    - maxLength
+    - placeholder
+    - spellcheck
+ - select && options
+  - select name attribute
+  - multiple
+  - option value, label
+
+
+## input textarea button select
 
 ## Document Object Model (DOM)
 
