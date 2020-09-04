@@ -43,14 +43,23 @@ link style.css
 ## script
 引入js文件
 
+## 资源地址
+  - relavite path ./  ../../  /
+  - absolute path http://www.google.com/
+
+## comments
+
+```
+<!-- and end with -->. CSS comments start with /* and end with */
+```
 
 # body
 
 ## 原则
-- 语义化
 - 标签闭合
 - 标签组合
 - 必备属性
+- 语义化
 
 ## 常见语义化标签
 ## h1 - h3 - 标题
@@ -120,19 +129,24 @@ link style.css
   - title
   - event handler: onload onclick oncontextmenu onerror ...
 
+## tag a
+  - href relative path, absolute path, email, anchor
+  - target
+
 ## 三种引入style的方式
 
 ## 良好的html结构
+```
 header: <header>.
 navigation bar: <nav>.
 main content: <main>, with various content subsections represented by <article>, <section>, and <div> elements.
 sidebar: <aside>; often placed inside <main>.
 footer: <footer>.
-
+```
 ## SEO (Search Engine Optimization)
 meta信息
 
---
+----------------------------------------------------------------
 
 ## img, video
  - https://homepages.cae.wisc.edu/~ece533/images/airplane.png
@@ -142,16 +156,103 @@ meta信息
 
 ## iframe
 
+## codepen
+
 ## table - 表格
 
  - basic
  - tr, th, td
+ - thead, tbody, tfoot
  - border css
  - colgroup
  - td 内部html
 
 ## 用户交互
 ## form
+```
+<form>
+  <fieldset class="account-info">
+    <label>
+      Username
+      <input type="text" name="username">
+    </label>
+    <label>
+      Password
+      <input type="password" name="password">
+    </label>
+  </fieldset>
+  <fieldset class="account-action">
+    <input class="btn" type="submit" name="submit" value="Login">
+    <label>
+      <input type="checkbox" name="remember"> Stay signed in
+    </label>
+  </fieldset>
+</form>
+
+```
+```
+*,
+*:before,
+*:after {
+   box-sizing: border-box;
+}
+form {
+  border: 1px solid #c6c7cc;
+  border-radius: 5px;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  width: 240px;
+}
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+input {
+  border-radius: 5px;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+.account-info {
+  padding: 20px 20px 0 20px;
+}
+.account-info label {
+  color: #395870;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.account-info input {
+  background: #fff;
+  border: 1px solid #c6c7cc;
+   box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+  color: #636466;
+  padding: 6px;
+  margin-top: 6px;
+  width: 100%;
+}
+.account-action {
+  background: #f0f0f2;
+  border-top: 1px solid #c6c7cc;
+  padding: 20px;
+}
+.account-action .btn {
+  background: linear-gradient(#49708f, #293f50);
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  float: left;
+  padding: 8px 16px;
+}
+.account-action label {
+  color: #7c7c80;
+  font-size: 12px;
+  float: left;
+  margin: 10px 0 0 20px;
+}
+
+```
  - basic
  - label input
  - submit
@@ -203,9 +304,4 @@ meta信息
   - multiple
   - option value, label
 
-
-## input textarea button select
-
 ## Document Object Model (DOM)
-
-## DOM examples
