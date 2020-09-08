@@ -1,24 +1,43 @@
-# basic
-## 构成
-选择器 - selector
-规则声明 - rule - 属性和值
-
-大括号，：，；
-```
-p {
-  color: red;
-  width: 500px;
-  border: 1px solid black;
+import { swiss, prism } from '@mdx-deck/themes'
+export const theme = {
+  ...swiss,
+  ...prism,
+  fonts: {
+    body: 'Microsoft YaHei',
+    heading: 'Microsoft YaHei'
+  }
 }
-```
 
+## Basic
+
+<Steps>
+
+ - 选择器 - selector
+ - 规则声明 - rule - 属性和值
+
+</Steps>
+
+```css
+  p {
+    color: red;
+    width: 500px;
+    border: 1px solid black;
+  }
+```
+---
 ## 选择器 selectors
+
+<Steps>
+
   - tag p
   - id #id-name
   - class .class-name
   - attribute img[src] a[href="http://www.example.com"]
   - pseudo-class 伪类 a:hover
 
+</Steps>
+
+---
 ## 常用属性和值
   - 文本
     - font-family
@@ -45,7 +64,7 @@ p {
     - bottom
     - overflow
 
-
+---
 # 选择
 ## cascade style sheet- 层叠，瀑布
 ```
@@ -57,7 +76,7 @@ p {
   background: green;
 }
 ```
-
+---
 ## 继承 inherit
 
 ## 混合选择
@@ -74,7 +93,7 @@ p {
 ## 一个element可以有多个class或者id
 ## 通过devtool查看元素的css选择器
 
-
+---
 # 盒模式
 ```
 div {
@@ -103,7 +122,7 @@ div {
 
 ## 上右下左 padding margin
 
-----------------------------------------------------------------
+---
 
 # 布局
 ## display属性

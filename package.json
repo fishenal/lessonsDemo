@@ -1,0 +1,22 @@
+{
+  "name": "lessonsdemo",
+  "version": "1.0.0",
+  "description": "lessonsDemo",
+  "main": "index.js",
+  "scripts": {
+    "startCss": "mdx-deck basicCss.mdx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fishenal/lessonsDemo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fishenal/lessonsDemo/issues"
+  },
+  "homepage": "https://github.com/fishenal/lessonsDemo#readme",
+  "devDependencies": {
+    "mdx-deck": "^4.1.1"
+  }
+}
