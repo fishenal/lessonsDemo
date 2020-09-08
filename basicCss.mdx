@@ -4,12 +4,11 @@ export const theme = {
   ...prism,
   fonts: {
     body: 'Microsoft YaHei',
-    heading: 'Microsoft YaHei'
-  }
+    heading: 'Microsoft YaHei',
+  },
 }
 
 ## Basic
-
 <Steps>
 
  - 选择器 - selector
@@ -29,23 +28,34 @@ export const theme = {
 
 <Steps>
 
-  - tag p
-  - id #id-name
-  - class .class-name
-  - attribute img[src] a[href="http://www.example.com"]
-  - pseudo-class 伪类 a:hover
+  - tag name: ```p, a, div```
+  - id: ```#name_input```
+  - class: ```.common_button```
+  - attribute: ```img[src] a[href="http://www.example.com"]```
+  - pseudo-class: 伪类 ```a:hover div:last-child```
 
 </Steps>
 
 ---
 ## 常用属性和值
+
+<Steps>
+
   - 文本
     - font-family
     - font-size
     - text-align
-    - line-Height
+    - line-height
     - color
     - text-shadow
+
+</Steps>
+
+---
+## 常用属性和值
+
+<Steps>
+
   - 盒模式
     - padding
     - margin
@@ -54,6 +64,14 @@ export const theme = {
     - height
     - background
     - vertical-align
+
+</Steps>
+
+---
+## 常用属性和值
+
+<Steps>
+
   - 布局
     - display
     - float
@@ -64,10 +82,11 @@ export const theme = {
     - bottom
     - overflow
 
+</Steps>
+
 ---
-# 选择
-## cascade style sheet- 层叠，瀑布
-```
+### Cascade style sheet- 层叠，瀑布
+```css
 p {
   background: orange;
   font-size: 24px;
@@ -77,25 +96,149 @@ p {
 }
 ```
 ---
-## 继承 inherit
+### 继承 inherit
+```html
+<div class="parent">
+  <div class="child">
+    child content
+    <p>child's p: <em>here!</em></p>
+  </div>
+</div>
+```
+```css
+.parent {
+	text-shadow: 5px 5px #558ABB;
+}
+```
+--- 
+### 混合选择
+multiple element 
+```css
+p, #id-name, .class-name {
+  padding: 20px;
+}
+```
+--- 
+### 混合选择
+组合选择 
+```css
+p.class-name {
+  border: 1px solid;
+}
+div#pop_tag {
+  width: 450px;
+}
+.common_input.input {
+  border-width: 5px;
+}
+```
+--- 
+### 混合选择
+限定选择 
+```css
+.outer p.class-name span {
+  overflow: hidden;
+}
+.outer > p.class-name > span {
+  overflow: scroll;
+}
+```
+---
+### 一个element可能接受多个css规则
+层叠样式表的应用技巧
+```html
+<p class="name" id="my_name">Wendy</p>
+<p class="name" id="your_name">Fish</p>
+```
+```css
+p {
+	line-height: 50px;
+}
+.name {
+	background: gray;
+}
+#my_name {
+	color: red;
+}
+#your_name {
+	color: yellow;
+}
+```
+---
+### 优先级
+同级别下 inline style > id selector > class selector > tagname selector
 
-## 混合选择
-  - multiple element p, #id-name, .class-name
-  - 组合选择 p.class-name
-  - 限定选择 .outer p.class-name span , >
+```html
+<span id="this_hello" class="common_span" style="color: blue;">Hello world!</span>
+```
+```css
+#this_hello {
+	color: red;
+}
 
-## selector优先级
-  - 同级别下 id > class > tag
-  - 同类型下 限制的越精确优先级越高
-  - inline-css > style.css
-  - !important
+.common_span {
+  color: orange;
+}
+span {
+	color: yellow;
+}
+```
 
-## 一个element可以有多个class或者id
-## 通过devtool查看元素的css选择器
+---
+### 优先级
+同类型下 限制的越精确优先级越高
+
+```html
+<div class="parent">
+  <div class="child">
+    <p class="my_name">Wendy</p>
+  </div>
+</div>
+```
+```css
+.my_name {
+	color: red;
+}
+.child .my_name {
+	color: orange;
+}
+.parent .child .my_name {
+	color: blue;
+}
+```
+---
+### 优先级
+使用!important 提高特定属性的优先级
+```css
+.my_name {
+	color: red !important;
+}
+.child .my_name {
+	color: orange;
+}
+.parent .child .my_name {
+	color: blue;
+}
+```
+
+---
+### 全局css和局部css
+
+<Steps>
+
+ - global.css/ table.css/ componentA.css/ loginPage.css
+ - bootstrap
+  ```html
+  <button type="button" class="btn btn-primary">Primary</button>
+  <button type="button" class="btn btn-secondary">Secondary</button>
+  <button type="button" class="btn btn-success">Success</button>
+  ```
+
+</Steps>
 
 ---
 # 盒模式
-```
+```css
 div {
   border: 6px solid #949599;
   height: 100px;
@@ -152,7 +295,7 @@ div {
 ## flex-box布局
   - demos
   - 居中
-  ```
+  ```css
   .vertical-container {
     height: 300px;
     display: -webkit-flex;

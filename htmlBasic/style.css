@@ -5,3 +5,18 @@ h2 {
   font-size: 10px;
   color: gray;
 }
+.common_input.input {
+  border-width: 5px;
+}
+.my_name {
+	color: red;
+}
+.child .my_name {
+	color: orange;
+}
+.parent .child .my_name {
+	color: blue;
+}
+.parent {
+  text-shadow: 5px 5px #558ABB;
+}
