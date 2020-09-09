@@ -1,91 +1,122 @@
-import { swiss, prism } from '@mdx-deck/themes'
+import { swiss, prism } from "@mdx-deck/themes";
+import boxImage from "./public/box-model.png";
+import twoFonts from "./public/twoFonts.png";
 export const theme = {
   ...swiss,
   ...prism,
   fonts: {
-    body: 'Microsoft YaHei',
-    heading: 'Microsoft YaHei',
+    body: "Microsoft YaHei",
+    heading: "Microsoft YaHei",
   },
-}
+  styles: {
+    code: {
+      fontSize: [4],
+    },
+    ...swiss.styles,
+  },
+};
 
 ## Basic
+
 <Steps>
 
- - 选择器 - selector
- - 规则声明 - rule - 属性和值
+
+- 选择器 - selector
+- 规则声明 - rule - 属性和值
 
 </Steps>
 
+
 ```css
-  p {
-    color: red;
-    width: 500px;
-    border: 1px solid black;
-  }
+p {
+  color: red;
+  width: 500px;
+  border: 1px solid black;
+}
 ```
+
 ---
+
 ## 选择器 selectors
 
 <Steps>
 
-  - tag name: ```p, a, div```
-  - id: ```#name_input```
-  - class: ```.common_button```
-  - attribute: ```img[src] a[href="http://www.example.com"]```
-  - pseudo-class: 伪类 ```a:hover div:last-child```
+
+- all: `*`
+- tag name: `p, a, div`
+- id: `#name_input`
+- class: `.common_button`
+- attribute: `img[src] a[href="http://www.example.com"]`
+- pseudo-class: 伪类 `a:hover div:last-child`
 
 </Steps>
 
+
 ---
+
 ## 常用属性和值
 
 <Steps>
 
-  - 文本
-    - font-family
-    - font-size
-    - text-align
-    - line-height
-    - color
-    - text-shadow
+
+- 文本
+  - font-family
+  - font-size
+  - font-weight
+  - text-align
+  - line-height
+  - color
+  - text-shadow
+  - text-decoration
+  - word-break
+  - cursor
 
 </Steps>
 
+
 ---
+
 ## 常用属性和值
 
 <Steps>
 
-  - 盒模式
-    - padding
-    - margin
-    - border
-    - width
-    - height
-    - background
-    - vertical-align
+
+- 盒模式
+  - padding
+  - margin
+  - border
+  - width
+  - height
+  - background
+  - vertical-align
 
 </Steps>
 
+
 ---
+
 ## 常用属性和值
 
 <Steps>
 
-  - 布局
-    - display
-    - float
-    - position
-    - left
-    - right
-    - top
-    - bottom
-    - overflow
+
+- 布局
+  - display
+  - float
+  - position
+  - left
+  - right
+  - top
+  - bottom
+  - overflow
 
 </Steps>
 
+
 ---
+
 ### Cascade style sheet- 层叠，瀑布
+
 ```css
 p {
   background: orange;
@@ -95,8 +126,11 @@ p {
   background: green;
 }
 ```
+
 ---
+
 ### 继承 inherit
+
 ```html
 <div class="parent">
   <div class="child">
@@ -105,22 +139,33 @@ p {
   </div>
 </div>
 ```
+
 ```css
 .parent {
-	text-shadow: 5px 5px #558ABB;
+  text-shadow: 5px 5px #558abb;
 }
 ```
---- 
+
+---
+
 ### 混合选择
-multiple element 
+
+multiple element
+
 ```css
-p, #id-name, .class-name {
+p,
+#id-name,
+.class-name {
   padding: 20px;
 }
 ```
---- 
+
+---
+
 ### 混合选择
-组合选择 
+
+组合选择
+
 ```css
 p.class-name {
   border: 1px solid;
@@ -132,9 +177,13 @@ div#pop_tag {
   border-width: 5px;
 }
 ```
---- 
+
+---
+
 ### 混合选择
-限定选择 
+
+限定选择
+
 ```css
 .outer p.class-name span {
   overflow: hidden;
@@ -142,50 +191,66 @@ div#pop_tag {
 .outer > p.class-name > span {
   overflow: scroll;
 }
+.outer > * {
+  overflow: auto;
+}
 ```
+
 ---
-### 一个element可能接受多个css规则
+
+### 一个 element 可能接受多个 css 规则
+
 层叠样式表的应用技巧
+
 ```html
 <p class="name" id="my_name">Wendy</p>
 <p class="name" id="your_name">Fish</p>
 ```
+
 ```css
 p {
-	line-height: 50px;
+  line-height: 50px;
 }
 .name {
-	background: gray;
+  background: gray;
 }
 #my_name {
-	color: red;
+  color: red;
 }
 #your_name {
-	color: yellow;
+  color: yellow;
 }
 ```
+
 ---
+
 ### 优先级
+
 同级别下 inline style > id selector > class selector > tagname selector
 
 ```html
-<span id="this_hello" class="common_span" style="color: blue;">Hello world!</span>
+<span id="this_hello" class="common_span" style="color: blue;"
+  >Hello world!</span
+>
 ```
+
 ```css
 #this_hello {
-	color: red;
+  color: red;
 }
 
 .common_span {
   color: orange;
 }
 span {
-	color: yellow;
+  color: yellow;
 }
 ```
 
 ---
+
 ### 优先级
+
 同类型下 限制的越精确优先级越高
 
 ```html
@@ -195,147 +260,383 @@ span {
   </div>
 </div>
 ```
+
 ```css
 .my_name {
-	color: red;
+  color: red;
 }
 .child .my_name {
-	color: orange;
+  color: orange;
 }
 .parent .child .my_name {
-	color: blue;
-}
-```
----
-### 优先级
-使用!important 提高特定属性的优先级
-```css
-.my_name {
-	color: red !important;
-}
-.child .my_name {
-	color: orange;
-}
-.parent .child .my_name {
-	color: blue;
+  color: blue;
 }
 ```
 
 ---
-### 全局css和局部css
+
+### 优先级
+
+使用!important 提高特定属性的优先级
+
+```css
+.my_name {
+  color: red !important;
+}
+.child .my_name {
+  color: orange;
+}
+.parent .child .my_name {
+  color: blue;
+}
+```
+
+---
+
+### 全局 css 和局部 css
 
 <Steps>
 
- - global.css/ table.css/ componentA.css/ loginPage.css
- - bootstrap
-  ```html
-  <button type="button" class="btn btn-primary">Primary</button>
-  <button type="button" class="btn btn-secondary">Secondary</button>
-  <button type="button" class="btn btn-success">Success</button>
-  ```
+
+- global.css/ table.css/ componentA.css/ loginPage.css
+- bootstrap
 
 </Steps>
 
+```html
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+```
+
+
 ---
-# 盒模式
+
+### 盒模式
+
 ```css
 div {
   border: 6px solid #949599;
   height: 100px;
-  margin: 20px;
+  margin: 30px;
   padding: 20px;
   width: 400px;
 }
-
 ```
-  - padding和margin的区别, border
-## box-sizing
-## 通过devtool查看元素的盒模式
 
-# 属性
-## 颜色表示
-  - 名称
-  - hex color
-  - rgb && rgba
-
-## 单位
-  - 绝对值 px ，pt
-  - 百分比
-  - em， rem
-
-## 上右下左 padding margin
+- actually width = 400px + 6px _ 2 + 20px _ 2 + 30px \* 2;
+- actually height = 100px + 6px _ 2 + 20px _ 2 + 30px \* 2;
 
 ---
 
-# 布局
-## display属性
-  - block, inline， inline-block
-  - display none
+### 盒模式
+<img src={boxImage} style={{height: 'auto'}}/>
 
-## 居中
-  - 文字水平居中
-  - 定宽元素居中
-  - 定高文字垂直居中
-  - 不定高垂直居中 , table-cell
+---
 
-## position
-  - 默认值 static
-  - relative  配合left right top bottom
-  - fixed  配合left right top bottom
-  - absolute  配合left right top bottom
-  - absolute 被限制
+### 盒模式 - box-sizing
 
-## 浮动布局和清除浮动
-  clearfix
-## 浮动布局 百分比尺寸-自适应
+```css
+div {
+  box-sizing: content-box; // initial value
+  border: 6px solid #949599;
+  height: 100px;
+  margin: 30px;
+  padding: 20px;
+  width: 400px;
+}
+```
 
-## inline-block 布局
-  - 空格
+- actually width = 400px + 6px _ 2 + 20px _ 2 + 30px \* 2;
 
-## flex-box布局
-  - demos
-  - 居中
-  ```css
-  .vertical-container {
-    height: 300px;
-    display: -webkit-flex;
-    display:         flex;
-    -webkit-align-items: center;
-            align-items: center;
-    -webkit-justify-content: center;
-            justify-content: center;
-  }
-  ```
+---
 
-# transform, tansition和 animation
+### 盒模式 - box-sizing
 
-# 一些实践中常见的css处理
-## 伪类
-  :hover :select :first-element
+```css
+div {
+  box-sizing: border-box;
+  border: 6px solid #949599;
+  height: 100px;
+  margin: 30px;
+  padding: 20px;
+  width: 400px;
+}
+```
 
-## overflow处理
+- actually width = 400px;
 
-## border border-radius
+---
 
-## background
+### 全局属性
 
-## font-family 退步
+```css
+div {
+  font-family: inherit;
+  display: unset;
+  line-height: initial;
+}
+```
 
-## font-face
+---
 
-# 关于css
-## debug 调试css
-## global css， reset css
-## less
-  - 变量
-  - 嵌套
-  - 方法
-  - 代码分割 @import
+### 颜色表示
 
-# UI库
-  - bootstrap
-  - antd
+```css
+div {
+  background: transparent;
+  color: maroon;
+  color: #a52a2a;
+  color: rgb(34, 12, 64);
+  background-color: rgba(34, 12, 64, 0.6);
+}
+```
 
+---
 
+### 颜色表示
 
+- 名称
+  - `black, white, gray, maroon, red, green .....`
+  - `transparent `
+- hex color
+  - `#000000 = #000 = black`
+  - `#ff0000 = #f00 = red`
+  - `#a52a2a`
+- rgb && rgba
+  - `rgb(34, 12, 64)`
+  - `rgba(34, 12, 64, 0.6)`
 
+---
+
+### 单位
+
+```css
+div {
+  width: 500px; /* pixels*/
+  height: 300pt; /* points*/
+
+  width: 90%; /*percentage of parent*/
+  padding: 5%; /*percentage of parent*/
+
+  font-size: 1.2em; /* fontsize of parent*/
+  line-height: 2.5rem; /* fontsize of root*/
+
+  width: 1vw; /* viewport's width*/
+  height: 1vh; /* viewport's height*/
+}
+```
+
+---
+
+### shorthand
+
+```css
+.img {
+  background: url(test.png) no-repeat left top;
+}
+.img {
+  background-image: url(test.png);
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+```
+
+---
+
+### shorthand
+
+```css
+div {
+  padding: 10px 20px 30px 40px;
+  margin: 10px 20px;
+}
+div {
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  padding-left: 40px;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+```
+
+---
+
+### 伪类 Pseudo-classes
+
+```css
+button:hover {
+  background-color: #f5f5f5;
+}
+input:focus {
+  border-color: orange;
+}
+```
+
+<a href="https://jsbin.com/fiweqiz/edit?html,css,output" target="_blank">
+  # Pseudo Demo
+</a>
+
+---
+
+### display
+
+```css
+.d1 {
+  display: block;
+}
+.d2 {
+  display: inline;
+}
+.d3 {
+  display: inline-block;
+}
+.d4 {
+  display: none;
+}
+.d5 {
+  display: flex;
+}
+```
+
+---
+
+### display
+
+<a href="https://jsbin.com/tuqeyim/2/edit?html,css,output" target="_blank">
+  # Display Demo
+</a>
+
+---
+
+### inline-block 空格问题
+
+<a href="https://jsbin.com/tuqeyim/2/edit?html,css,output" target="_blank">
+  # Inline-block blank Demo
+</a>
+
+---
+
+### position
+
+- 默认值 static
+- relative 配合 left right top bottom
+- fixed 配合 left right top bottom
+- absolute 配合 left right top bottom
+- absolute 被限制
+
+<a href="https://jsbin.com/zuhuxuw/edit?html,css,output" target="_blank">
+  # Position Demo
+</a>
+
+---
+
+### overflow
+<a href="https://jsbin.com/yijopop/edit?html,css,output" target="_blank">
+  # Overflow Demo
+</a>
+
+---
+
+### border border-radius box-shadow
+
+<a href="https://jsbin.com/toyifen/edit?html,css,output" target="_blank">
+  # Button Demo
+</a>
+
+---
+
+### background
+
+<a href="https://jsbin.com/tutucir/edit?html,css,output" target="_blank">
+  # Background Demo
+</a>
+
+---
+
+### font-family
+<img src={twoFonts} style={{height: 'auto'}}/>
+
+---
+
+### font-family
+
+```css
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.antd-font {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica
+      Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe
+      UI Symbol, Noto Color Emoji;
+}
+```
+
+---
+
+### word-break wrap
+
+<a href="https://jsbin.com/ropuqod/edit?html,css,output" target="_blank">
+  # Wordbreak&nowrap Demo
+</a>
+
+---
+
+### text-overflow
+
+<a href="https://jsbin.com/cuhagol/edit?html,css,output" target="_blank">
+  # Textoverflow Demo
+</a>
+
+---
+
+### transition
+
+<a href="https://jsbin.com/micihox/edit?html,css,output" target="_blank">
+  # Transition Demo
+</a>
+
+---
+
+### center element
+
+<a href="https://jsbin.com/jepexor/edit?html,css,output" target="_blank">
+  # Center Demo
+</a>
+
+---
+
+### 浮动布局 百分比尺寸-自适应
+
+<a href="https://jsbin.com/bogocep/edit?html,css,output" target="_blank">
+  # Float Layout Demo
+</a>
+
+---
+
+### flex-box 布局
+
+<a href="https://jsbin.com/sopaxit/edit?html,css,output" target="_blank">
+  # Flex-box Layout Demo
+</a>
+
+---
+
+### less
+
+<a href="http://lesscss.org/#" target="_blank">
+  # Lesscss
+</a>
+
+---
+
+### UI 库
+
+- bootstrap <a href="https://v4.bootcss.com/docs/components/card/" target="_blank"># Bootstrap</a>
+- antd <a href="https://ant.design/components/button-cn/" target="_blank"># Ant Design</a>
+
+---
