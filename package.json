@@ -4,7 +4,9 @@
   "description": "lessonsDemo",
   "main": "index.js",
   "scripts": {
-    "startCss": "mdx-deck basicCss.mdx"
+    "startCss": "mdx-deck basicCss.mdx",
+    "startJs": "mdx-deck basicJs.mdx",
+    "runStaticHtmls": "http-server ./htmlBasic/"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,10 @@
   },
   "homepage": "https://github.com/fishenal/lessonsDemo#readme",
   "devDependencies": {
+    "mdx-code": "2.0.0",
     "mdx-deck": "^4.1.1"
+  },
+  "dependencies": {
+    "http-server": "^0.12.3"
   }
 }
